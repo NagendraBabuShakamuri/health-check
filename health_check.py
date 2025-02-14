@@ -53,7 +53,6 @@ def check_endpoints(file_path):
                 domain_stats[domain]["total"] += 1
                 if is_healthy:
                     domain_stats[domain]["up"] += 1
-                # print(domain_stats.items())
                 
             # Print Availability Percentages.
             for domain, stats in domain_stats.items():
