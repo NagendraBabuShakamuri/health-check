@@ -57,8 +57,9 @@ def check_endpoints(file_path):
                 
             # Print Availability Percentages.
             for domain, stats in domain_stats.items():
-                uptime = round((stats["up"] / stats["total"]) * 100)
-                print(f"{domain} has {uptime}% availability percentage")
+                if stats["total"] > 0:
+                    uptime = round((stats["up"] / stats["total"]) * 100)
+                    print(f"{domain} has {uptime}% availability percentage")
             print("\n")
             
             # Wait for 15 Seconds.
